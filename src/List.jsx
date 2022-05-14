@@ -12,7 +12,7 @@ const List = ({ list, removeItem, editItem }) => {
             key={id}
             className="flex justify-between items-center bg-gray-50"
           >
-            <p className="p-2 font-mono">{title}</p>
+            <p className="p-2 font-mono text-xl">{title}</p>
             <div className="flex text-lg space-x-4 p-2">
               <FiEdit className="text-green-700" onClick={() => editItem(id)} />
               <MdOutlineDelete

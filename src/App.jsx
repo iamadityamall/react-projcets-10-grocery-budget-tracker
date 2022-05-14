@@ -24,8 +24,9 @@ function App() {
 
   useEffect(() => {
     document.title = "grocery budget tracker";
+    document.querySelector('input').focus();
   }, []);
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted");
@@ -93,10 +94,10 @@ function App() {
 
   return (
     <main className="flex justify-center items-center mt-32">
-      <section className="p-6 w-[90vw] space-y-4">
+      <section className="p-6 w-[90vw] space-y-4 md:w-[60vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[30vw]">
         {alert && <Alert {...alert} showAlert={showAlert} list={list} />}
         <header className="capitalize text-lg text-center font-mono font-bold leading-relaxed tracking-wide">
-          <h1 className="py-4">grocery budget tracker</h1>
+          <h1 className="py-4 lg:text-2xl">grocery budget tracker</h1>
         </header>
         <form className="flex flex-col space-y-5" onSubmit={handleSubmit}>
           <input
@@ -108,7 +109,7 @@ function App() {
           />
           <button
             type="submit"
-            className="text-lg p-2 bg-green-400 font-mono font-semibold text-white rounded-lg"
+            className="text-lg p-2 bg-green-400 font-mono font-semibold text-white rounded-lg lg:text-xl"
           >
             {isEditing ? `edit` : "submit"}
           </button>
@@ -117,7 +118,7 @@ function App() {
           <div className="flex flex-col space-y-5">
             <List list={list} removeItem={removeItem} editItem={editItem} />
             <button
-              className="text-center font-mono font-semibold text-white bg-red-400 w-full p-3"
+              className="text-center font-mono font-semibold text-white bg-red-400 w-full p-3 lg:text-lg"
               onClick={() => clearList()}
             >
               clear item
